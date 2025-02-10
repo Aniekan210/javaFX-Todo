@@ -1,55 +1,41 @@
+import javafx.scene.layout.StackPane;
+import javafx.scene.text.Text;
+import javafx.geometry.Insets;
+
 /**
  * Write a description of class Date here.
  *
  * @author Alamin Adeleke, Aniekan Ekarika
  * @version 28/1/2025
  **/
-public class Date
+public class Date extends StackPane
 {
     // instance variables - replace the example below with your own
     protected int day;
     protected int month;
+    protected Text dateString;
     protected final String[] monthName= {"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"};
     //protected int[] date/* = {day, month}*/;
 
-    /**
-     * Constructor for objects of class Date
-     */
-    public Date(int day, int month)
+    //Feb 14th default
+    public Date()
     {
         // initialise instance variables
+        this.day = 14;
+        this.month = 2;
+        
+        dateString = new Text(this.toString());
+        this.setMargin(dateString, new Insets(8,8,8,8));
+        this.getChildren().addAll(dateString);
+    }
+    
+    public void setDate(int day, int month)
+    {
         this.day = day;
         this.month = month;
+        
+        dateString.setText(this.toString());
     }
-
-    /**
-     * Accessor method o return the day and month as an array
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public int[] returnDate()
-    {
-        //set the array
-        int[] date = {day, month};
-        return date;
-    }
-    
-    /**
-     * Accesor Methods
-     *
-     * @return    the day and month
-     */
-    public int returnDay() {return day;}
-    public int returnMonth() {return month;}
-    
-    /**
-     * Mutator Methods
-     *
-     * @param    integer to set it to
-     */
-    public void setDay(int day) {this.day = day;}
-    public void setMonth(int month) {this.month = month;}
     
     public String toString()
     {
@@ -79,5 +65,6 @@ public class Date
             text += "th";
         }
         return text;
+        // Jan 2nd
     }
 }
