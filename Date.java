@@ -1,17 +1,28 @@
+import javafx.scene.layout.StackPane;
+import javafx.scene.text.Text;
+import javafx.geometry.Insets;
+
 /**
  * Write a description of class Date here.
  *
  * @author Alamin Adeleke, Aniekan Ekarika
  * @version 28/1/2025
  **/
-public class Date
+public class Date extends StackPane
 {
     // instance variables - replace the example below with your own
     protected int day;
     protected int month;
+    protected Text dateString;
     protected final String[] monthName= {"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"};
     //protected int[] date/* = {day, month}*/;
 
+    //Feb 14th default
+    public Date()
+    {
+        this(14,2);
+    }
+    
     /**
      * Constructor for objects of class Date
      */
@@ -20,6 +31,14 @@ public class Date
         // initialise instance variables
         this.day = day;
         this.month = month;
+        this.setStyle("-fx-background-color: pink");
+        dateString = new Text(this.toString());
+        this.setMargin(dateString, new Insets(8,8,8,8));
+        this.getChildren().addAll(dateString);
+        
+        this.setOnMouseClicked(event -> {
+            this.setStyle("-fx-background-color: red");
+        });
     }
 
     /**
@@ -33,6 +52,12 @@ public class Date
         //set the array
         int[] date = {day, month};
         return date;
+    }
+    
+    public void setDate()
+    {
+        this.day = day;
+        this.month = month;
     }
     
     /**
@@ -79,5 +104,6 @@ public class Date
             text += "th";
         }
         return text;
+        // Jan 2nd
     }
 }
