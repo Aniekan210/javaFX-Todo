@@ -17,6 +17,12 @@ public class Item extends HBox
      */
     public Item()
     {
+        date = new Date();
         
+        this.setOnMouseClicked(event -> {
+            
+        });
     }
+    
+    
 }

@@ -20,61 +20,22 @@ public class Date extends StackPane
     //Feb 14th default
     public Date()
     {
-        this(14,2);
-    }
-    
-    /**
-     * Constructor for objects of class Date
-     */
-    public Date(int day, int month)
-    {
         // initialise instance variables
-        this.day = day;
-        this.month = month;
-        this.setStyle("-fx-background-color: pink");
+        this.day = 14;
+        this.month = 2;
+        
         dateString = new Text(this.toString());
         this.setMargin(dateString, new Insets(8,8,8,8));
         this.getChildren().addAll(dateString);
-        
-        this.setOnMouseClicked(event -> {
-            this.setStyle("-fx-background-color: red");
-        });
-    }
-
-    /**
-     * Accessor method o return the day and month as an array
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public int[] returnDate()
-    {
-        //set the array
-        int[] date = {day, month};
-        return date;
     }
     
-    public void setDate()
+    public void setDate(int day, int month)
     {
         this.day = day;
         this.month = month;
+        
+        dateString.setText(this.toString());
     }
-    
-    /**
-     * Accesor Methods
-     *
-     * @return    the day and month
-     */
-    public int returnDay() {return day;}
-    public int returnMonth() {return month;}
-    
-    /**
-     * Mutator Methods
-     *
-     * @param    integer to set it to
-     */
-    public void setDay(int day) {this.day = day;}
-    public void setMonth(int month) {this.month = month;}
     
     public String toString()
     {
