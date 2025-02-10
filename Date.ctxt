@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Date
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Date\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ Date\ here.\r\n\r\n\ @author\ Alamin\ Adeleke,\ Aniekan\ Ekarika\r\n\ @version\ 28/1/2025\r\n
 comment1.params=day\ month
 comment1.target=Date(int,\ int)
 comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Date\r\n
